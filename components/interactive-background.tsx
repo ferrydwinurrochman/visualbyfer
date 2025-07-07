@@ -8,19 +8,25 @@ export default function InteractiveBackground() {
     Array<{ id: number; x: number; y: number; vx: number; vy: number; size: number }>
   >([])
   const canvasRef = useRef<HTMLCanvasElement>(null)
+  const [isClient, setIsClient] = useState(false)
 
   useEffect(() => {
+    // Ensure we're on the client side
+    setIsClient(true)
+
+    if (typeof window === "undefined") return
+
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY })
     }
 
     window.addEventListener("mousemove", handleMouseMove)
 
-    // Initialize particles
+    // Initialize particles only on client side
     const initialParticles = Array.from({ length: 30 }, (_, i) => ({
       id: i,
-      x: Math.random() * window.innerWidth,
-      y: Math.random() * window.innerHeight,
+      x: Math.random() * (window.innerWidth || 1200),
+      y: Math.random() * (window.innerHeight || 800),
       vx: (Math.random() - 0.5) * 1,
       vy: (Math.random() - 0.5) * 1,
       size: Math.random() * 2 + 1,
@@ -34,6 +40,8 @@ export default function InteractiveBackground() {
 
   // Particle animation
   useEffect(() => {
+    if (!isClient || typeof window === "undefined") return
+
     const canvas = canvasRef.current
     if (!canvas) return
 
@@ -89,7 +97,12 @@ export default function InteractiveBackground() {
     }
 
     animateParticles()
-  }, [])
+  }, [isClient])
+
+  // Don't render anything on server side
+  if (!isClient) {
+    return null
+  }
 
   return (
     <>
@@ -136,7 +149,7 @@ export default function InteractiveBackground() {
       <div
         className="fixed inset-0 opacity-20 transition-all duration-1000 pointer-events-none"
         style={{
-          background: `radial-gradient(circle at ${(mousePosition.x / window.innerWidth) * 100}% ${(mousePosition.y / window.innerHeight) * 100}%, hsla(213, 77%, 24%, 0.3) 0%, transparent 50%)`,
+          background: `radial-gradient(circle at ${(mousePosition.x / (typeof window !== "undefined" ? window.innerWidth : 1200)) * 100}% ${(mousePosition.y / (typeof window !== "undefined" ? window.innerHeight : 800)) * 100}%, hsla(213, 77%, 24%, 0.3) 0%, transparent 50%)`,
         }}
       />
     </>
