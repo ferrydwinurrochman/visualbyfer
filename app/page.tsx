@@ -446,7 +446,7 @@ export default function Portfolio() {
                 <h3 className="text-xl font-semibold mb-4 text-white">Follow Me</h3>
                 <div className="flex space-x-4">
                   <a
-                    href="https://www.linkedin.com/in/ferry-dwi-nurrochman-0ba372152?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+                    href="https://www.linkedin.com/in/ferrydwinurrochman"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-12 h-12 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full flex items-center justify-center hover:scale-110 transition-transform"
