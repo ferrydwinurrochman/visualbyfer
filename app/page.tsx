@@ -18,8 +18,14 @@ export default function HomePage() {
   >([])
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const heroRef = useRef<HTMLDivElement>(null)
+  const [isClient, setIsClient] = useState(false)
 
   useEffect(() => {
+    // Ensure we're on the client side
+    setIsClient(true)
+
+    if (typeof window === "undefined") return
+
     const handleScroll = () => setScrollY(window.scrollY)
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY })
@@ -31,8 +37,8 @@ export default function HomePage() {
     // Initialize particles
     const initialParticles = Array.from({ length: 50 }, (_, i) => ({
       id: i,
-      x: Math.random() * window.innerWidth,
-      y: Math.random() * window.innerHeight,
+      x: Math.random() * (window.innerWidth || 1200),
+      y: Math.random() * (window.innerHeight || 800),
       vx: (Math.random() - 0.5) * 2,
       vy: (Math.random() - 0.5) * 2,
       size: Math.random() * 3 + 1,
@@ -50,6 +56,8 @@ export default function HomePage() {
 
   // Particle animation
   useEffect(() => {
+    if (!isClient || typeof window === "undefined") return
+
     const canvas = canvasRef.current
     if (!canvas) return
 
@@ -105,7 +113,7 @@ export default function HomePage() {
     }
 
     animateParticles()
-  }, [])
+  }, [isClient])
 
   const portfolioItems = [
     // 2 LARGE PORTRAIT ITEMS
@@ -234,17 +242,21 @@ export default function HomePage() {
       }}
     >
       {/* Interactive Canvas Background */}
-      <canvas ref={canvasRef} className="fixed inset-0 pointer-events-none z-0" style={{ opacity: 0.6 }} />
+      {isClient && (
+        <canvas ref={canvasRef} className="fixed inset-0 pointer-events-none z-0" style={{ opacity: 0.6 }} />
+      )}
 
       {/* Mouse Follower */}
-      <div
-        className="fixed w-6 h-6 bg-blue-400/30 rounded-full pointer-events-none z-50 transition-transform duration-100 ease-out"
-        style={{
-          left: mousePosition.x - 12,
-          top: mousePosition.y - 12,
-          transform: `scale(${1 + Math.sin(Date.now() * 0.005) * 0.2})`,
-        }}
-      />
+      {isClient && (
+        <div
+          className="fixed w-6 h-6 bg-blue-400/30 rounded-full pointer-events-none z-50 transition-transform duration-100 ease-out"
+          style={{
+            left: mousePosition.x - 12,
+            top: mousePosition.y - 12,
+            transform: `scale(${1 + Math.sin(Date.now() * 0.005) * 0.2})`,
+          }}
+        />
+      )}
 
       {/* Floating Geometric Shapes */}
       <div className="fixed inset-0 pointer-events-none z-10">
@@ -281,13 +293,15 @@ export default function HomePage() {
         className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 md:pt-0"
       >
         {/* Dynamic Background Gradient */}
-        <div
-          className="absolute inset-0 opacity-30 transition-all duration-1000"
-          style={{
-            background: `radial-gradient(circle at ${(mousePosition.x / window.innerWidth) * 100}% ${(mousePosition.y / window.innerHeight) * 100}%, hsla(213, 77%, 24%, 0.4) 0%, transparent 50%), radial-gradient(circle at 80% 20%, hsla(202, 27%, 55%, 0.3) 0%, transparent 50%)`,
-            transform: `translateY(${scrollY * 0.3}px)`,
-          }}
-        />
+        {isClient && (
+          <div
+            className="absolute inset-0 opacity-30 transition-all duration-1000"
+            style={{
+              background: `radial-gradient(circle at ${(mousePosition.x / (window.innerWidth || 1200)) * 100}% ${(mousePosition.y / (window.innerHeight || 800)) * 100}%, hsla(213, 77%, 24%, 0.4) 0%, transparent 50%), radial-gradient(circle at 80% 20%, hsla(202, 27%, 55%, 0.3) 0%, transparent 50%)`,
+              transform: `translateY(${scrollY * 0.3}px)`,
+            }}
+          />
+        )}
 
         {/* Animated Rings */}
         <div className="absolute inset-0 flex items-center justify-center">
