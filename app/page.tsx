@@ -265,10 +265,20 @@ export default function Portfolio() {
             </div>
 
             <div className="flex justify-center space-x-6">
-              <a href="#" className="text-white/60 hover:text-blue-400 transition-colors">
+              <a
+                href="https://www.linkedin.com/in/ferry-dwi-nurrochman-0ba372152?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/60 hover:text-blue-400 transition-colors"
+              >
                 <Linkedin className="w-6 h-6" />
               </a>
-              <a href="#" className="text-white/60 hover:text-blue-400 transition-colors">
+              <a
+                href="https://www.instagram.com/ferrydwn/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/60 hover:text-blue-400 transition-colors"
+              >
                 <Instagram className="w-6 h-6" />
               </a>
             </div>
@@ -436,13 +446,17 @@ export default function Portfolio() {
                 <h3 className="text-xl font-semibold mb-4 text-white">Follow Me</h3>
                 <div className="flex space-x-4">
                   <a
-                    href="#"
+                    href="https://www.linkedin.com/in/ferry-dwi-nurrochman-0ba372152?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-12 h-12 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full flex items-center justify-center hover:scale-110 transition-transform"
                   >
                     <Linkedin className="w-6 h-6 text-white" />
                   </a>
                   <a
-                    href="#"
+                    href="https://www.instagram.com/ferrydwn/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-12 h-12 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full flex items-center justify-center hover:scale-110 transition-transform"
                   >
                     <Instagram className="w-6 h-6 text-white" />
@@ -497,7 +511,7 @@ export default function Portfolio() {
       {/* Footer */}
       <footer className="py-8 border-t border-white/10">
         <div className="container mx-auto px-6 text-center">
-          <p className="text-white/60">© 2024 Ferry Dwi Nurrochman. All rights reserved.</p>
+          <p className="text-white/60">© 2025 Ferry Dwi Nurrochman. All rights reserved.</p>
         </div>
       </footer>
 
