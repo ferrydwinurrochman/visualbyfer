@@ -24,7 +24,6 @@ export const metadata: Metadata = {
     title: "Ferrydn Portofolio",
     description: "Marketing Creative Portfolio - Ferry Dwi Nurrochman",
   },
-    generator: 'v0.dev'
 }
 
 export default function RootLayout({
