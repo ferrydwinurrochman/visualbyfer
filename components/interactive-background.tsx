@@ -7,13 +7,24 @@ export default function InteractiveBackground() {
   const [particles, setParticles] = useState<
     Array<{ id: number; x: number; y: number; vx: number; vy: number; size: number }>
   >([])
+  const [windowSize, setWindowSize] = useState({ width: 0, height: 0 })
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
   useEffect(() => {
+    // Set initial window size
+    if (typeof window !== "undefined") {
+      setWindowSize({ width: window.innerWidth, height: window.innerHeight })
+    }
+
+    const handleResize = () => {
+      setWindowSize({ width: window.innerWidth, height: window.innerHeight })
+    }
+
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY })
     }
 
+    window.addEventListener("resize", handleResize)
     window.addEventListener("mousemove", handleMouseMove)
 
     // Initialize particles
@@ -28,6 +39,7 @@ export default function InteractiveBackground() {
     setParticles(initialParticles)
 
     return () => {
+      window.removeEventListener("resize", handleResize)
       window.removeEventListener("mousemove", handleMouseMove)
     }
   }, [])
@@ -40,41 +52,37 @@ export default function InteractiveBackground() {
     const ctx = canvas.getContext("2d")
     if (!ctx) return
 
-    canvas.width = window.innerWidth
-    canvas.height = window.innerHeight
+    canvas.width = windowSize.width
+    canvas.height = windowSize.height
 
     const animateParticles = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
 
       setParticles((prevParticles) =>
         prevParticles.map((particle) => {
-          // Update position
           let newX = particle.x + particle.vx
           let newY = particle.y + particle.vy
 
-          // Bounce off edges
           if (newX <= 0 || newX >= canvas.width) particle.vx *= -1
           if (newY <= 0 || newY >= canvas.height) particle.vy *= -1
 
           newX = Math.max(0, Math.min(canvas.width, newX))
           newY = Math.max(0, Math.min(canvas.height, newY))
 
-          // Draw particle
           ctx.beginPath()
           ctx.arc(newX, newY, particle.size, 0, Math.PI * 2)
           ctx.fillStyle = `rgba(59, 130, 246, ${0.2 + Math.sin(Date.now() * 0.001 + particle.id) * 0.1})`
           ctx.fill()
 
-          // Draw connections to nearby particles
-          prevParticles.forEach((otherParticle) => {
-            const dx = newX - otherParticle.x
-            const dy = newY - otherParticle.y
+          prevParticles.forEach((other) => {
+            const dx = newX - other.x
+            const dy = newY - other.y
             const distance = Math.sqrt(dx * dx + dy * dy)
 
             if (distance < 80) {
               ctx.beginPath()
               ctx.moveTo(newX, newY)
-              ctx.lineTo(otherParticle.x, otherParticle.y)
+              ctx.lineTo(other.x, other.y)
               ctx.strokeStyle = `rgba(59, 130, 246, ${0.05 * (1 - distance / 80)})`
               ctx.lineWidth = 1
               ctx.stroke()
@@ -89,14 +97,12 @@ export default function InteractiveBackground() {
     }
 
     animateParticles()
-  }, [])
+  }, [windowSize])
 
   return (
     <>
-      {/* Interactive Canvas Background */}
       <canvas ref={canvasRef} className="fixed inset-0 pointer-events-none z-0" style={{ opacity: 0.4 }} />
 
-      {/* Mouse Follower */}
       <div
         className="fixed w-4 h-4 bg-blue-400/20 rounded-full pointer-events-none z-50 transition-transform duration-100 ease-out"
         style={{
@@ -106,7 +112,6 @@ export default function InteractiveBackground() {
         }}
       />
 
-      {/* Floating Geometric Shapes */}
       <div className="fixed inset-0 pointer-events-none z-10">
         {[...Array(6)].map((_, i) => (
           <div
@@ -132,13 +137,15 @@ export default function InteractiveBackground() {
         ))}
       </div>
 
-      {/* Dynamic Background Gradient */}
-      <div
-        className="fixed inset-0 opacity-20 transition-all duration-1000 pointer-events-none"
-        style={{
-          background: `radial-gradient(circle at ${(mousePosition.x / window.innerWidth) * 100}% ${(mousePosition.y / window.innerHeight) * 100}%, hsla(213, 77%, 24%, 0.3) 0%, transparent 50%)`,
-        }}
-      />
+      {/* ✅ Aman dari SSR */}
+      {windowSize.width > 0 && windowSize.height > 0 && (
+        <div
+          className="fixed inset-0 opacity-20 transition-all duration-1000 pointer-events-none"
+          style={{
+            background: `radial-gradient(circle at ${(mousePosition.x / windowSize.width) * 100}% ${(mousePosition.y / windowSize.height) * 100}%, hsla(213, 77%, 24%, 0.3) 0%, transparent 50%)`,
+          }}
+        />
+      )}
     </>
   )
 }
