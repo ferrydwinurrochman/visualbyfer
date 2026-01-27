@@ -3,7 +3,7 @@
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { ExternalLink, Play, Eye, Heart } from "lucide-react"
+import { ExternalLink, Play } from "lucide-react"
 import Image from "next/image"
 import Navigation from "@/components/navigation"
 import ContactButton from "@/components/contact-button"
@@ -164,9 +164,9 @@ export default function PortfolioPage() {
                       {project.category}
                     </Badge>
                   </div>
+                </div>
 
-                  {/* Stats */}
-
+                {/* Stats */}
                 <div className="p-6 relative z-10">
                   <div className="flex items-center mb-2">
                     <span className="text-2xl mr-2 group-hover:animate-bounce">{project.icon}</span>
