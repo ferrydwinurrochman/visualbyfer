@@ -166,17 +166,6 @@ export default function PortfolioPage() {
                   </div>
 
                   {/* Stats */}
-                  <div className="absolute top-4 right-4 flex space-x-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-                    <div className="flex items-center space-x-1 bg-white/20 backdrop-blur-sm rounded-full px-2 py-1 hover:scale-110 transition-transform">
-                      <Eye className="w-3 h-3 text-white" />
-                      <span className="text-xs text-white">{project.stats.views}</span>
-                    </div>
-                    <div className="flex items-center space-x-1 bg-white/20 backdrop-blur-sm rounded-full px-2 py-1 hover:scale-110 transition-transform">
-                      <Heart className="w-3 h-3 text-white" />
-                      <span className="text-xs text-white">{project.stats.likes}</span>
-                    </div>
-                  </div>
-                </div>
 
                 <div className="p-6 relative z-10">
                   <div className="flex items-center mb-2">
