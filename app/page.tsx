@@ -352,7 +352,7 @@ export default function HomePage() {
               <p className="text-xl md:text-2xl text-blue-300 mb-2 animate-text-glow">Marketing Creative</p>
               <p className="text-lg text-white/80 mb-6">Bachelor's in Communication Studies</p>
               <p className="text-white/70 max-w-2xl mx-auto leading-relaxed">
-                Data-driven marketing professional with experience leading promotional strategies and operations. Currently serving as Head of Marketing, combining branding creativity with technical analytical skills (Advanced Excel) to measure campaign effectiveness and budget efficiency. Possesses a strong operational background, discipline, and high adaptability in developing measurable and profitable business strategies.
+                Data-driven marketing professional with experience leading promotional strategies and operations. Currently serving as Head of Marketing, combining branding creativity with technical analytical skills to measure campaign effectiveness and budget efficiency. Possesses a strong operational background, discipline, and high adaptability in developing measurable and profitable business strategies.
               </p>
             </div>
 
