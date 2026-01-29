@@ -42,7 +42,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <p className="text-white/60 text-sm">Email</p>
-                      <p className="text-white group-hover:text-blue-300 transition-colors">Ferrydwn@icloud.com</p>
+                      <p className="text-white group-hover:text-blue-300 transition-colors">Ferrydn18@gmail.com</p>
                     </div>
                   </div>
                   <div className="flex items-center space-x-4 group">
@@ -51,7 +51,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <p className="text-white/60 text-sm">Phone</p>
-                      <p className="text-white group-hover:text-blue-300 transition-colors">+62897-7400-606</p>
+                      <p className="text-white group-hover:text-blue-300 transition-colors">+62817-7674-2411</p>
                     </div>
                   </div>
                   <div className="flex items-center space-x-4 group">
