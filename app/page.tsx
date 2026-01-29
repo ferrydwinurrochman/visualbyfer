@@ -213,20 +213,6 @@ export default function HomePage() {
       color: "from-teal-500/30 to-green-500/30",
       icon: "📄",
     },
-
-    // 1 LARGE HORIZONTAL ITEM (at bottom)
-    {
-      id: 10,
-      title: "Video Editing Projects",
-      category: "Video Production",
-      description:
-        "Professional video editing for marketing campaigns, social media content, promotional materials, and brand storytelling",
-      image: "/placeholder.svg?height=300&width=800",
-      size: "horizontal", // spans multiple columns, 1 row
-      color: "from-red-500/20 to-orange-500/20",
-      icon: "🎥",
-      isVideo: true,
-    },
   ]
 
   const openPortfolioLink = (id: number) => {
