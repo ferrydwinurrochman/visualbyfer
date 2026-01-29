@@ -357,22 +357,33 @@ export default function HomePage() {
             </div>
 
             {/* Interactive Buttons */}
-            <div className="flex flex-wrap justify-center gap-4 mb-8">
-              <Button className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white border-0 hover:scale-110 hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 animate-pulse-glow">
-                  <Link href="https://drive.google.com/uc?export=download&id=1qNKO1lMK_LzqrsiD3NPdQ5Rtk-QN58HibWQgai8izwU">
-                <Download className="w-4 h-4 mr-2" />
-                Download CV
-              </Button>
-              <Link href="/portfolio">
-                <Button
-                  variant="outline"
-                  className="border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white bg-transparent hover:scale-110 hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-300"
-                >
-                  View Full Portfolio
-                </Button>
-              </Link>
-            </div>
-
+<div className="flex flex-wrap justify-center gap-4 mb-8">
+  <Button 
+    asChild 
+    className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white border-0 hover:scale-110 hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 animate-pulse-glow"
+  >
+    {/* aman jika download gagal/membuka preview */}
+    <Link 
+      href="https://drive.google.com/uc?export=download&id=1qNKO1lMK_LzqrsiD3NPdQ5Rtk-QN58HibWQgai8izwU"
+      target="_blank" 
+      rel="noopener noreferrer"
+    >
+      <Download className="w-4 h-4 mr-2" />
+      Download CV
+    </Link>
+  </Button>
+  
+  {/* Tombol kedua */}
+  <Button
+    asChild
+    variant="outline"
+    className="border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white bg-transparent hover:scale-110 hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-300"
+  >
+    <Link href="/portfolio">
+      View Full Portfolio
+    </Link>
+  </Button>
+</div>
             {/* Social Links with Magnetic Effect */}
             <div className="flex justify-center space-x-6">
               <a
