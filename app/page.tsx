@@ -364,7 +364,7 @@ export default function HomePage() {
   >
     {/* aman jika download gagal/membuka preview */}
     <Link 
-      href="https://drive.google.com/uc?export=download&id=1qNKO1lMK_LzqrsiD3NPdQ5Rtk-QN58HibWQgai8izwU"
+      href="https://drive.google.com/uc?export=download&id=1ThKvAvte5QpXD-DkMUd-q4rg7n7NlNt9"
       target="_blank" 
       rel="noopener noreferrer"
     >
