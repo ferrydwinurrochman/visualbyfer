@@ -342,6 +342,34 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Trusted By Section */}
+      <section className="py-14 relative z-10">
+        <div className="container mx-auto px-6">
+          <p className="text-center text-xs font-semibold tracking-[0.2em] uppercase text-white/40 mb-10">
+            Trusted by Industry Leaders &amp; Growing Brands
+          </p>
+          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 max-w-5xl mx-auto">
+            {[
+              { src: "https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/Logo/amorenza.webp", alt: "Amorenza" },
+              { src: "https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/Logo/jne.webp", alt: "JNE" },
+              { src: "https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/Logo/zealin.webp", alt: "Zealin" },
+              { src: "https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/Logo/scentnice.webp", alt: "Scentnice" },
+              { src: "https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/Logo/lutte.webp", alt: "Lutte" },
+              { src: "https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/Logo/rusteline.webp", alt: "Rusteline" },
+              { src: "https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/Logo/glowthinc.webp", alt: "Glowthinc" },
+              { src: "https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/Logo/mureeskin.webp", alt: "Mureeskin" },
+            ].map((logo) => (
+              <img
+                key={logo.alt}
+                src={logo.src}
+                alt={logo.alt}
+                className="h-12 md:h-14 w-auto object-contain grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Featured Works Section */}
       <section className="py-20 relative z-10">
         <div className="container mx-auto px-6">
@@ -366,17 +394,19 @@ export default function HomePage() {
                 <div className={`absolute inset-0 bg-gradient-to-br ${work.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
 
                 {/* Logo / Image area */}
-                <div className="relative h-48 overflow-hidden bg-white/5 flex items-center justify-center">
+                <div className="relative h-44 flex items-center justify-center p-8 overflow-hidden">
+                  {/* Subtle radial glow behind logo */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${work.color} opacity-30`} />
+                  <div className="absolute inset-0 bg-gradient-to-b from-white/0 via-white/0 to-black/30" />
                   <Image
                     src={work.image}
                     alt={work.title}
-                    width={220}
-                    height={140}
-                    className="object-contain max-h-32 w-auto group-hover:scale-105 transition-transform duration-500"
+                    width={200}
+                    height={120}
+                    className="relative z-10 object-contain max-h-24 w-auto drop-shadow-lg group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                   {/* Category badge */}
-                  <div className="absolute top-4 left-4">
+                  <div className="absolute top-4 left-4 z-20">
                     <Badge className={`border text-xs font-semibold backdrop-blur-sm ${work.badgeColor}`}>
                       {work.category}
                     </Badge>

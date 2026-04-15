@@ -1,0 +1,35 @@
+Tolong perbarui landing page ini dengan dua instruksi utama berikut. Pastikan desainnya tetap responsif (mobile-friendly) dan menggunakan styling Tailwind CSS yang selaras dengan tema gelap/biru website ini.
+
+1. Tambahkan Section Baru: "Trusted By" (Logo Cloud)
+Buat satu section baru tepat di atas section 'Featured Works'.
+
+Judul Section: Tambahkan teks kecil di tengah atas berbunyi: TRUSTED BY INDUSTRY LEADERS & GROWING BRANDS (gunakan warna teks abu-abu terang/muted).
+
+Layout Logo: Buat grid atau flex-wrap barisan logo yang posisinya berada di tengah (center).
+
+Efek Visual (Penting): Buat semua logo ini memiliki efek grayscale dan agak transparan (opacity-70) secara default. Saat di-hover oleh kursor, ubah menjadi berwarna penuh (grayscale-0 opacity-100) dengan transisi yang halus.
+
+Link Gambar Logo (Gunakan tag <img> dengan ukuran proporsional/height seragam sekitar h-12 atau h-16):
+
+https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/Logo/amorenza.webp
+
+https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/Logo/jne.webp
+
+https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/Logo/zealin.webp
+
+https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/Logo/scentnice.webp
+
+https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/Logo/lutte.webp
+
+https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/Logo/rusteline.webp
+
+https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/Logo/glowthinc.webp
+
+https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/Logo/mureeskin.webp
+
+2. Perbaiki Estetika Gambar di dalam 3 Card "Featured Works"
+Saat ini, gambar logo di dalam 3 card tersebut terlihat seperti kotak putih/hitam yang kaku (object-cover yang menutupi seluruh area atas card).
+
+Tolong ubah styling wadah gambar di dalam card tersebut.
+
+Gunakan object-contain, berikan padding yang cukup luas (misal p-6 atau p-8), dan ubah background wadah gambarnya agar menyatu (blend) dengan warna card, atau berikan efek gradient yang halus, sehingga logonya tidak terlihat seperti stiker kotak yang tertempel kaku."
