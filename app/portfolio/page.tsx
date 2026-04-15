@@ -25,7 +25,7 @@ export default function PortfolioPage() {
       title: "Social Media Campaign",
       category: "Digital Marketing",
       description: "Comprehensive social media strategy and content creation for brand awareness.",
-      image: "https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/digmar-1.webp",
+      image: "https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/kampanyesosmed.webp",
       link: "https://drive.google.com/drive/folders/12oqgbEYFnp3eyqrQ1WOF6IV2_F5OQsme?usp=share_link",
       tags: ["Social Media", "Content Strategy", "Marketing"],
       color: "from-blue-500/20 to-cyan-500/20",
