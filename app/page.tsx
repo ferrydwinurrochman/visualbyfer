@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Download, ChevronDown, Linkedin, Instagram, ExternalLink, Play } from "lucide-react"
+import { Download, ChevronDown, Linkedin, Instagram, ExternalLink } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import Navigation from "@/components/navigation"
@@ -115,109 +115,53 @@ export default function HomePage() {
     animateParticles()
   }, [isClient])
 
-  const portfolioItems = [
-    // 2 LARGE PORTRAIT ITEMS
+  const featuredWorks = [
     {
       id: 1,
-      title: "Brand Identity Design",
-      category: "Branding",
-      description:
-        "Complete visual identity system for modern startups including logo design, brand guidelines, and marketing materials",
-      image: "/placeholder.svg?height=600&width=400",
-      size: "portrait", // spans 1 column, 2 rows
-      color: "from-purple-500/20 to-pink-500/20",
-      icon: "🎨",
+      category: "B2B Strategy",
+      title: "B2B Strategic Marketing & Supply Chain Integration",
+      image: "https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/Logo/amorenza.webp",
+      brands: "Amorenza · JNE · Zealin",
+      color: "from-purple-500/20 to-indigo-500/20",
+      accentColor: "text-purple-300",
+      borderColor: "border-purple-500/30",
+      badgeColor: "bg-purple-500/20 text-purple-300 border-purple-500/30",
+      problem: "Fragmented data and operational silos between the fragrance supplier (Amorenza), manufacturing factory (Zealin), and logistics (JNE).",
+      solution: "Developed an integrated B2B digital strategy and automated data tracking systems to sync the entire supply chain.",
+      result: "Streamlined end-to-end operations from raw material sourcing to final consumer delivery.",
+      tags: ["B2B Strategy", "Supply Chain", "Logistics Integration"],
     },
     {
       id: 2,
-      title: "Digital Marketing Campaign",
-      category: "Marketing",
-      description: "Comprehensive digital marketing strategy with multi-platform campaigns and performance analytics",
-      image: "/placeholder.svg?height=600&width=400",
-      size: "portrait", // spans 1 column, 2 rows
+      category: "Brand Excellence",
+      title: "Retail Growth: Fragrance & Fashion Branding",
+      image: "https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/Logo/lutte.webp",
+      brands: "Scentnice · Lutte · Rusteline",
       color: "from-blue-500/20 to-cyan-500/20",
-      icon: "🚀",
+      accentColor: "text-cyan-300",
+      borderColor: "border-cyan-500/30",
+      badgeColor: "bg-cyan-500/20 text-cyan-300 border-cyan-500/30",
+      problem: "Low conversion rates and weak market positioning for retail brands in the highly competitive Fashion and Fragrance sectors.",
+      solution: "Executed high-converting landing page designs, premium brand identity systems, and optimized marketplace ads (CPAS).",
+      result: "Scaled daily sales volume for Scentnice, Lutte, and Rusteline while establishing a distinctive premium brand voice.",
+      tags: ["Brand Excellence", "Conversion Rate Optimization", "E-commerce"],
     },
-
-    // 4 MEDIUM ITEMS
     {
       id: 3,
-      title: "Motion Graphics Reel",
-      category: "Animation",
-      description: "Dynamic animations and motion graphics for social media campaigns",
-      image: "/placeholder.svg?height=300&width=400",
-      size: "medium",
-      color: "from-indigo-500/20 to-purple-500/20",
-      icon: "🎬",
-      isVideo: true,
-    },
-    {
-      id: 4,
-      title: "Product Photography",
-      category: "Photography",
-      description: "High-end product photography for e-commerce and marketing",
-      image: "/placeholder.svg?height=300&width=400",
-      size: "medium",
-      color: "from-orange-500/20 to-red-500/20",
-      icon: "📸",
-    },
-    {
-      id: 5,
-      title: "Web Design Projects",
-      category: "UI/UX",
-      description: "Responsive website designs and user interface concepts",
-      image: "/placeholder.svg?height=300&width=400",
-      size: "medium",
-      color: "from-green-500/20 to-emerald-500/20",
-      icon: "💻",
-    },
-    {
-      id: 6,
-      title: "Power BI Dashboard",
-      category: "Data Visualization",
-      description: "Interactive business intelligence dashboards and analytics",
-      image: "/placeholder.svg?height=300&width=400",
-      size: "medium",
-      color: "from-cyan-500/20 to-blue-500/20",
-      icon: "📊",
-    },
-
-    // 3 SMALL ITEMS
-    {
-      id: 7,
-      title: "Logo Collection",
-      category: "Branding",
-      description: "Minimalist logo designs for various industries",
-      image: "/placeholder.svg?height=250&width=300",
-      size: "small",
-      color: "from-yellow-500/30 to-orange-500/30",
-      icon: "⚡",
-    },
-    {
-      id: 8,
-      title: "Social Media Content",
-      category: "Design",
-      description: "Instagram posts and story templates",
-      image: "/placeholder.svg?height=250&width=300",
-      size: "small",
-      color: "from-pink-500/30 to-rose-500/30",
-      icon: "📱",
-    },
-    {
-      id: 9,
-      title: "Print Design",
-      category: "Graphic Design",
-      description: "Brochures, flyers, and marketing materials",
-      image: "/placeholder.svg?height=250&width=300",
-      size: "small",
-      color: "from-teal-500/30 to-green-500/30",
-      icon: "📄",
+      category: "Performance Marketing",
+      title: "Data-Driven Performance Marketing for Beauty",
+      image: "https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/Logo/glowthinc.webp",
+      brands: "Glowthinc · Mureeskin",
+      color: "from-emerald-500/20 to-teal-500/20",
+      accentColor: "text-emerald-300",
+      borderColor: "border-emerald-500/30",
+      badgeColor: "bg-emerald-500/20 text-emerald-300 border-emerald-500/30",
+      problem: "High Customer Acquisition Costs (CAC) and inefficient ad spend across Meta and Google platforms.",
+      solution: "Implemented advanced performance dashboards to monitor real-time LTV and CPA metrics.",
+      result: "Optimized ad efficiency for Glowthinc and Mureeskin, resulting in a significant reduction in CPA and data-backed scaling.",
+      tags: ["Performance Marketing", "Data Analytics", "Growth Hacking"],
     },
   ]
-
-  const openPortfolioLink = (id: number) => {
-    console.log(`Opening portfolio item ${id}`)
-  }
 
   return (
     <div
@@ -398,112 +342,98 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Portfolio Bento Grid Section */}
+      {/* Featured Works Section */}
       <section className="py-20 relative z-10">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent hover:scale-105 transition-transform duration-300 cursor-default">
-              Featured Work
+              Featured Works
             </h2>
             <p className="text-white/70 text-lg max-w-2xl mx-auto">
-              A curated selection of my best creative projects and campaigns
+              Three strategic pillars — each built on real brands, real data, and measurable results.
             </p>
           </div>
 
-          {/* Interactive Bento Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-4 max-w-7xl mx-auto">
-            {portfolioItems.map((item, index) => (
+          {/* Three Strategic Pillars */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto">
+            {featuredWorks.map((work, index) => (
               <div
-                key={item.id}
-                className={`
-                  group relative overflow-hidden rounded-2xl cursor-pointer
-                  glass-card backdrop-blur-xl bg-white/5 border border-white/10
-                  hover:bg-white/10 transition-all duration-500 hover:scale-[1.02]
-                  hover:shadow-2xl hover:shadow-blue-500/20
-                  ${item.size === "portrait" ? "md:col-span-1 lg:col-span-1 md:row-span-2" : ""}
-                  ${item.size === "medium" ? "md:col-span-2 lg:col-span-2" : ""}
-                  ${item.size === "small" ? "md:col-span-1 lg:col-span-1" : ""}
-                  ${item.size === "horizontal" ? "md:col-span-4 lg:col-span-6" : ""}
-                  ${isVisible ? "animate-slide-up" : "opacity-0"}
-                  magnetic-hover
-                `}
-                style={{
-                  animationDelay: `${index * 100}ms`,
-                }}
-                onClick={() => openPortfolioLink(item.id)}
+                key={work.id}
+                className={`group relative rounded-2xl glass-card backdrop-blur-xl bg-white/5 border border-white/10 overflow-hidden hover:bg-white/10 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20 ${isVisible ? "animate-slide-up" : "opacity-0"}`}
+                style={{ animationDelay: `${index * 150}ms` }}
               >
-                {/* Interactive Background Gradient */}
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
-                />
+                {/* Hover background gradient */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${work.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
 
-                {/* Animated Border */}
-                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-400/50 to-cyan-400/50 animate-border-flow" />
-                </div>
-
-                {/* Image with Parallax Effect */}
-                <div className="relative h-48 md:h-full min-h-[200px] overflow-hidden">
+                {/* Logo / Image area */}
+                <div className="relative h-48 overflow-hidden bg-white/5 flex items-center justify-center">
                   <Image
-                    src={item.image || "/placeholder.svg"}
-                    alt={item.title}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-700"
+                    src={work.image}
+                    alt={work.title}
+                    width={220}
+                    height={140}
+                    className="object-contain max-h-32 w-auto group-hover:scale-105 transition-transform duration-500"
                   />
-
-                  {/* Dynamic Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300" />
-
-                  {/* Interactive Elements */}
-                  {item.isVideo && (
-                    <div className="absolute top-4 right-4 w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:scale-110 transition-transform animate-pulse-glow">
-                      <Play className="w-5 h-5 text-white ml-0.5" />
-                    </div>
-                  )}
-
-                  {/* Category Badge - back to original position */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                  {/* Category badge */}
                   <div className="absolute top-4 left-4">
-                    <Badge className="bg-white/20 backdrop-blur-sm text-white border-0 hover:bg-white/30 transition-colors hover:scale-105 transform">
-                      {item.category}
+                    <Badge className={`border text-xs font-semibold backdrop-blur-sm ${work.badgeColor}`}>
+                      {work.category}
                     </Badge>
                   </div>
                 </div>
 
-                {/* Content with Slide Animation */}
-                <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                  <div className="flex items-center mb-2">
-                    <span className="text-2xl mr-2 group-hover:animate-bounce">{item.icon}</span>
-                    <h3 className="text-lg md:text-xl font-semibold text-white group-hover:text-blue-300 transition-colors">
-                      {item.title}
-                    </h3>
-                  </div>
-                  <p className="text-white/70 text-sm mb-3 group-hover:text-white/90 transition-colors">
-                    {item.description}
+                {/* Card body */}
+                <div className="relative z-10 p-6 flex flex-col gap-4">
+                  {/* Brands */}
+                  <p className={`text-xs font-medium tracking-widest uppercase ${work.accentColor}`}>
+                    {work.brands}
                   </p>
 
-                  {/* Interactive Action Button */}
-                  <div className="flex items-center justify-between">
-                    <div className="opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-4 group-hover:translate-x-0">
-                      <Button
-                        size="sm"
-                        className="bg-blue-600/80 hover:bg-blue-600 text-white border-0 backdrop-blur-sm hover:scale-110 transition-all duration-300"
+                  {/* Title */}
+                  <h3 className="text-lg font-bold text-white leading-snug group-hover:text-blue-200 transition-colors">
+                    {work.title}
+                  </h3>
+
+                  {/* Problem / Solution / Result */}
+                  <ul className="flex flex-col gap-3 text-sm text-white/75">
+                    <li className="flex gap-2">
+                      <span className="shrink-0 font-bold text-red-400 mt-0.5">Problem:</span>
+                      <span>{work.problem}</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="shrink-0 font-bold text-blue-300 mt-0.5">Solution:</span>
+                      <span>{work.solution}</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="shrink-0 font-bold text-emerald-400 mt-0.5">Result:</span>
+                      <span>{work.result}</span>
+                    </li>
+                  </ul>
+
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    {work.tags.map((tag) => (
+                      <Badge
+                        key={tag}
+                        variant="outline"
+                        className="border-white/20 text-white/55 text-xs hover:border-white/40 transition-colors"
                       >
-                        <ExternalLink className="w-3 h-3 mr-1" />
-                        View Project
-                      </Button>
-                    </div>
+                        {tag}
+                      </Badge>
+                    ))}
                   </div>
                 </div>
 
-                {/* Magnetic Glow Effect */}
+                {/* Glow effect */}
                 <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-400/20 to-cyan-400/20 blur-xl animate-pulse-glow" />
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-400/10 to-cyan-400/10 blur-xl" />
                 </div>
               </div>
             ))}
           </div>
 
-          {/* Interactive View More Button */}
+          {/* View All Projects */}
           <div className="text-center mt-12">
             <Link href="/portfolio">
               <Button className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white border-0 px-8 py-3 text-lg hover:scale-110 hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 animate-pulse-glow">

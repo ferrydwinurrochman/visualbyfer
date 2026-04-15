@@ -1,0 +1,75 @@
+"Please focus HANYA on the 'Featured Works' section. I want to reorganize this section into three strategic pillars using the brands I have managed. Use the Problem -> Solution -> Result structure for descriptions.
+
+Important: Use the following raw GitHub links for images:
+
+Amorenza: https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/Logo/amorenza.webp
+
+Lutte: https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/Logo/lutte.webp
+
+Rusteline: https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/Logo/rusteline.webp
+
+Glowthinc: https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/Logo/glowthinc.webp
+
+Update the content as follows:
+
+1. Project One: B2B Industrial & Logistics Ecosystem (Amorenza, JNE, Zealin)
+
+Image src: Amorenza logo link.
+
+Title: B2B Strategic Marketing & Supply Chain Integration
+
+Description:
+
+<ul>
+
+<li><b>Problem:</b> Fragmented data and operational silos between the fragrance supplier (Amorenza), manufacturing factory (Zealin), and logistics (JNE).</li>
+
+<li><b>Solution:</b> Developed an integrated B2B digital strategy and automated data tracking systems to sync the entire supply chain.</li>
+
+<li><b>Result:</b> Streamlined end-to-end operations from raw material sourcing to final consumer delivery.</li>
+
+</ul>
+
+Tags: B2B Strategy, Supply Chain, Logistics Integration
+
+2. Project Two: Consumer Lifestyle & Fashion (Scentnice, Lutte, Rusteline)
+
+Image src: Lutte or Rusteline logo link.
+
+Title: Retail Growth: Fragrance & Fashion Branding
+
+Description:
+
+<ul>
+
+<li><b>Problem:</b> Low conversion rates and weak market positioning for retail brands in the highly competitive Fashion and Fragrance sectors.</li>
+
+<li><b>Solution:</b> Executed high-converting landing page designs, premium brand identity systems, and optimized marketplace ads (CPAS).</li>
+
+<li><b>Result:</b> Scaled daily sales volume for Scentnice, Lutte, and Rusteline while establishing a distinctive premium brand voice.</li>
+
+</ul>
+
+Tags: Brand Excellence, Conversion Rate Optimization, E-commerce
+
+3. Project Three: Beauty & Skincare Analytics (Glowthinc, Mureeskin)
+
+Image src: Glowthinc logo link.
+
+Title: Data-Driven Performance Marketing for Beauty
+
+Description:
+
+<ul>
+
+<li><b>Problem:</b> High Customer Acquisition Costs (CAC) and inefficient ad spend across Meta and Google platforms.</li>
+
+<li><b>Solution:</b> Implemented advanced performance dashboards to monitor real-time LTV and CPA metrics.</li>
+
+<li><b>Result:</b> Optimized ad efficiency for Glowthinc and Mureeskin, resulting in a significant reduction in CPA and data-backed scaling.</li>
+
+</ul>
+
+Tags: Performance Marketing, Data Analytics, Growth Hacking
+
+Please ensure the layout is clean, professional, and fully responsive for mobile devices. Use bold headings and clean bullet points for the descriptions."
