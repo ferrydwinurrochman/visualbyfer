@@ -120,7 +120,7 @@ export default function HomePage() {
       id: 1,
       category: "B2B Strategy",
       title: "B2B Strategic Marketing & Supply Chain Integration",
-      image: "https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/Logo/amorenza.webp",
+      image: "https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/Logo/jne.webp",
       brands: "Amorenza · JNE · Zealin",
       color: "from-purple-500/20 to-indigo-500/20",
       accentColor: "text-purple-300",
@@ -294,7 +294,7 @@ export default function HomePage() {
   >
     {/* aman jika download gagal/membuka preview */}
     <Link 
-      href="https://drive.google.com/uc?export=download&id=1ThKvAvte5QpXD-DkMUd-q4rg7n7NlNt9"
+      href="https://drive.google.com/uc?export=download&id=1t3At0VfGaqe-WztNzk5mW7ba-Q46NYOY"
       target="_blank" 
       rel="noopener noreferrer"
     >
