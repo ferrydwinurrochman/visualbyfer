@@ -150,7 +150,7 @@ export default function HomePage() {
       id: 3,
       category: "Performance Marketing",
       title: "Data-Driven Performance Marketing for Beauty",
-      image: "https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/Logo/glowthinc.webp",
+      image: "https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/Logo/scentnice.webp",
       brands: "Glowthinc · Mureeskin",
       color: "from-emerald-500/20 to-teal-500/20",
       accentColor: "text-emerald-300",
