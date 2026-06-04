@@ -2,9 +2,7 @@
 
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import Navigation from "@/components/navigation"
-import ContactButton from "@/components/contact-button"
-import InteractiveBackground from "@/components/interactive-background"
+import LightNav from "@/components/light-nav"
 
 export default function SkillsPage() {
   const skills = [
@@ -70,26 +68,16 @@ export default function SkillsPage() {
   ]
 
   return (
-    <div
-      className="min-h-screen text-white relative"
-      style={{
-        background: "hsla(213, 77%, 14%, 1)",
-        background: "linear-gradient(90deg, hsla(213, 77%, 14%, 1) 0%, hsla(202, 27%, 45%, 1) 100%)",
-      }}
-    >
-      <InteractiveBackground />
-      <Navigation />
-      <ContactButton />
+    <div className="min-h-screen bg-background text-foreground relative">
+      <LightNav />
 
       <div className="pt-24 pb-20 relative z-20">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white hover:scale-105 transition-transform duration-300 cursor-default">
-              <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                Skills & Tools
-              </span>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
+              Skills & Tools
             </h1>
-            <p className="text-white/70 text-lg max-w-2xl mx-auto animate-text-glow">
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
               My expertise spans across various creative and marketing disciplines
             </p>
           </div>
@@ -99,26 +87,21 @@ export default function SkillsPage() {
             {skills.map((skill, index) => (
               <Card
                 key={skill.name}
-                className="glass-card p-6 backdrop-blur-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-500 group magnetic-hover hover:shadow-2xl hover:shadow-blue-500/20"
+                className="p-6 bg-white border border-border rounded-2xl shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-300 group"
                 style={{
                   animationDelay: `${index * 100}ms`,
                 }}
               >
                 <div className="text-center">
-                  <div className="text-4xl mb-4 group-hover:scale-110 group-hover:animate-bounce transition-transform duration-300">
+                  <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
                     {skill.icon}
                   </div>
-                  <h3 className="font-semibold mb-3 text-white group-hover:text-blue-300 transition-colors">
+                  <h3 className="font-semibold mb-3 text-foreground group-hover:text-primary transition-colors">
                     {skill.name}
                   </h3>
-                  <p className="text-sm text-white/70 leading-relaxed group-hover:text-white/90 transition-colors">
+                  <p className="text-sm text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors">
                     {skill.description}
                   </p>
-                </div>
-
-                {/* Hover Glow Effect */}
-                <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                  <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-blue-400/10 to-cyan-400/10 blur-xl" />
                 </div>
               </Card>
             ))}
@@ -126,16 +109,13 @@ export default function SkillsPage() {
 
           {/* Tools */}
           <div className="text-center">
-            <h2 className="text-2xl font-bold mb-8 text-white animate-text-glow">Tools I Use</h2>
+            <h2 className="text-2xl font-bold mb-8 text-foreground">Tools I Use</h2>
             <div className="flex flex-wrap justify-center gap-3">
-              {tools.map((tool, index) => (
+              {tools.map((tool) => (
                 <Badge
                   key={tool.name}
                   variant="secondary"
-                  className="bg-white/10 text-white border-white/20 hover:bg-white/20 hover:scale-110 transition-all duration-300 px-4 py-2 magnetic-hover"
-                  style={{
-                    animationDelay: `${index * 50}ms`,
-                  }}
+                  className="bg-primary/10 text-primary border-primary/20 hover:bg-primary/20 hover:scale-105 transition-all duration-300 px-4 py-2"
                 >
                   {tool.name}
                 </Badge>
@@ -144,44 +124,6 @@ export default function SkillsPage() {
           </div>
         </div>
       </div>
-
-      <style jsx global>{`
-        .glass-card {
-          backdrop-filter: blur(16px);
-          -webkit-backdrop-filter: blur(16px);
-        }
-        
-        .glass-card:hover {
-          transform: translateY(-8px);
-          box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-        }
-        
-        @keyframes float-geometric {
-          0%, 100% { transform: translateY(0px) rotate(0deg); }
-          50% { transform: translateY(-25px) rotate(180deg); }
-        }
-        
-        .animate-float-geometric {
-          animation: float-geometric 6s ease-in-out infinite;
-        }
-        
-        @keyframes text-glow {
-          0%, 100% { text-shadow: 0 0 10px rgba(59, 130, 246, 0.3); }
-          50% { text-shadow: 0 0 20px rgba(59, 130, 246, 0.6), 0 0 30px rgba(6, 182, 212, 0.3); }
-        }
-        
-        .animate-text-glow {
-          animation: text-glow 3s ease-in-out infinite;
-        }
-        
-        .magnetic-hover {
-          transition: transform 0.3s ease;
-        }
-        
-        .magnetic-hover:hover {
-          transform: translateY(-5px) scale(1.02);
-        }
-      `}</style>
     </div>
   )
 }

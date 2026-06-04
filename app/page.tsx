@@ -6,6 +6,8 @@ import { Badge } from "@/components/ui/badge"
 import { Download, ExternalLink, Linkedin, Instagram, ChevronDown } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import ProjectsCarousel from "@/components/projects-carousel"
+import LightNav from "@/components/light-nav"
 
 export default function HomePage() {
   const [scrollY, setScrollY] = useState(0)
@@ -71,19 +73,8 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
-      {/* Floating Navigation Pill */}
-      <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50">
-        <div className="glass-card px-8 py-4 rounded-full flex items-center gap-8 shadow-lg">
-          <Link href="/" className="font-bold text-sm tracking-tight hover:text-primary transition-colors">FD.</Link>
-          <div className="flex items-center gap-6 text-sm font-medium">
-            <Link href="/" className="hover:text-primary transition-colors">Home</Link>
-            <Link href="/skills" className="hover:text-primary transition-colors">Skills</Link>
-            <Link href="/portfolio" className="hover:text-primary transition-colors">Portfolio</Link>
-            <Link href="/portfolio" className="hover:text-primary transition-colors">Projects</Link>
-            <Link href="/contact" className="hover:text-primary transition-colors">Contact</Link>
-          </div>
-        </div>
-      </nav>
+      {/* Navigation */}
+      <LightNav />
 
       {/* Hero Section */}
       <section id="home" className="min-h-screen flex items-center justify-center relative pt-20 md:pt-0">
@@ -191,49 +182,9 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* Projects Bento Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            {projects.map((project, idx) => (
-              <div
-                key={project.id}
-                className={`group relative rounded-2xl overflow-hidden bg-white shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-300 h-full flex flex-col ${isVisible ? "animate-fade-in" : "opacity-0"}`}
-                style={{ animationDelay: `${idx * 100}ms` }}
-              >
-                {/* Image Container */}
-                <div className="relative h-40 bg-slate-50 flex items-center justify-center overflow-hidden">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    width={200}
-                    height={120}
-                    className="object-contain max-h-28 w-auto group-hover:scale-110 transition-transform duration-300"
-                  />
-                </div>
-
-                {/* Content */}
-                <div className="p-6 space-y-4 flex-grow flex flex-col">
-                  <h3 className="text-xl font-bold leading-tight group-hover:text-primary transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed flex-grow">
-                    {project.description}
-                  </p>
-
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-2 pt-4">
-                    {project.tags.map((tag) => (
-                      <Badge
-                        key={tag}
-                        variant="secondary"
-                        className="bg-primary/10 text-primary border-primary/20 text-xs"
-                      >
-                        {tag}
-                      </Badge>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
+          {/* Projects Carousel */}
+          <div className="max-w-7xl mx-auto px-4">
+            <ProjectsCarousel projects={projects} />
           </div>
         </div>
       </section>
