@@ -21,27 +21,34 @@ export default function HomePage() {
   const projects = [
     {
       id: 1,
+      title: "JNE - 6 Years Career Progression",
+      description: "A 6+ year journey of consistent promotion and operational excellence. Started at the frontlines handling high-volume transactions as a Sales Counter Officer, advanced to Marketing Staff executing regional brand activations, and ultimately promoted to Sales Support Analyst to build automated Power BI and Excel dashboards for complex sales data.",
+      tags: ["Operations", "Marketing Activation", "Data Analysis", "Power BI"],
+      image: "https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/Logo/jne.webp",
+    },
+    {
+      id: 2,
       title: "Mureeskin Market Expansion",
       description: "Spearheaded the 'Advanced Blemish Defense' campaign, optimizing marketplace conversion funnels exclusively for Shopee, resulting in lower CAC and higher ROAS.",
       tags: ["Shopee", "Meta Ads", "Power BI"],
       image: "https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/Logo/mureeskin.webp",
     },
     {
-      id: 2,
+      id: 3,
       title: "Lutte & Scentnice",
       description: "Brand development and community building for 'Lutters' alongside executing a high-converting '3 for 99k' bundling promo for the Scentnice Black Series.",
       tags: ["Brand Strategy", "Copywriting", "Web Design"],
       image: "https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/Logo/scentnice.webp",
     },
     {
-      id: 3,
+      id: 4,
       title: "AdPilots Prototype",
       description: "A SaaS prototype dashboard designed to automate ad management workflows.",
       tags: ["React", "Node.js", "Tailwind"],
       image: "https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/Logo/glowthinc.webp",
     },
     {
-      id: 4,
+      id: 5,
       title: "FullCircle Digital",
       description: "Founded a 360-degree digital marketing agency focusing on end-to-end e-commerce operational integration.",
       tags: ["Business Development", "Management"],
@@ -67,13 +74,13 @@ export default function HomePage() {
       {/* Floating Navigation Pill */}
       <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50">
         <div className="glass-card px-8 py-4 rounded-full flex items-center gap-8 shadow-lg">
-          <span className="font-bold text-sm tracking-tight">FD.</span>
+          <Link href="/" className="font-bold text-sm tracking-tight hover:text-primary transition-colors">FD.</Link>
           <div className="flex items-center gap-6 text-sm font-medium">
-            <a href="#home" className="hover:text-primary transition-colors">Home</a>
-            <a href="#about" className="hover:text-primary transition-colors">About</a>
-            <a href="#experience" className="hover:text-primary transition-colors">Experience</a>
-            <a href="#projects" className="hover:text-primary transition-colors">Projects</a>
-            <a href="#contact" className="hover:text-primary transition-colors">Contact</a>
+            <Link href="/" className="hover:text-primary transition-colors">Home</Link>
+            <Link href="/skills" className="hover:text-primary transition-colors">Skills</Link>
+            <Link href="/portfolio" className="hover:text-primary transition-colors">Portfolio</Link>
+            <Link href="/portfolio" className="hover:text-primary transition-colors">Projects</Link>
+            <Link href="/contact" className="hover:text-primary transition-colors">Contact</Link>
           </div>
         </div>
       </nav>
@@ -107,13 +114,13 @@ export default function HomePage() {
 
               <div className="flex gap-4 pt-4">
                 <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-base">
-                  <Link href="https://drive.google.com/uc?export=download&id=1t3At0VfGaqe-WztNzk5mW7ba-Q46NYOY" target="_blank">
+                  <Link href="/portfolio">
                     <Download className="w-4 h-4 mr-2" />
-                    View Projects
+                    View Full Portfolio
                   </Link>
                 </Button>
                 <Button variant="outline" className="px-8 py-6 text-base border-primary/20 hover:bg-primary/5">
-                  <Link href="#contact" className="flex items-center gap-2">
+                  <Link href="/contact" className="flex items-center gap-2">
                     Contact Me
                     <ExternalLink className="w-4 h-4" />
                   </Link>
@@ -189,26 +196,26 @@ export default function HomePage() {
             {projects.map((project, idx) => (
               <div
                 key={project.id}
-                className={`group relative rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-xl transition-all duration-300 ${isVisible ? "animate-fade-in" : "opacity-0"}`}
+                className={`group relative rounded-2xl overflow-hidden bg-white shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-300 h-full flex flex-col ${isVisible ? "animate-fade-in" : "opacity-0"}`}
                 style={{ animationDelay: `${idx * 100}ms` }}
               >
                 {/* Image Container */}
-                <div className="relative h-48 bg-gradient-to-br from-primary/5 to-secondary/5 flex items-center justify-center overflow-hidden">
+                <div className="relative h-40 bg-slate-50 flex items-center justify-center overflow-hidden">
                   <Image
                     src={project.image}
                     alt={project.title}
                     width={200}
                     height={120}
-                    className="object-contain max-h-32 w-auto group-hover:scale-110 transition-transform duration-300"
+                    className="object-contain max-h-28 w-auto group-hover:scale-110 transition-transform duration-300"
                   />
                 </div>
 
                 {/* Content */}
-                <div className="p-6 space-y-4">
+                <div className="p-6 space-y-4 flex-grow flex flex-col">
                   <h3 className="text-xl font-bold leading-tight group-hover:text-primary transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-sm text-muted-foreground leading-relaxed flex-grow">
                     {project.description}
                   </p>
 
