@@ -89,7 +89,7 @@ export default function HomePage() {
                   HELLO, I AM
                 </p>
                 <h1 className="text-5xl md:text-6xl font-bold leading-tight">
-                  Ferry Dwi Nurrochman<span className="text-primary">.</span>
+                  Ferry Dwi Nurrochman S.Ikom<span className="text-primary">.</span>
                 </h1>
               </div>
 
@@ -220,7 +220,7 @@ export default function HomePage() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
               <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
-                <a href="mailto:hello@ferrydn.com">Send Email</a>
+                <a href="mailto:ferrydwi57@gmail.com">Send Email</a>
               </Button>
               <Button asChild variant="outline" size="lg" className="border-primary/20 hover:bg-primary/5">
                 <a href="https://www.linkedin.com/in/ferry-dwi-nurrochman-0ba372152" target="_blank" rel="noopener noreferrer">
