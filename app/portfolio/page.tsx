@@ -5,9 +5,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { ExternalLink, Play } from "lucide-react"
 import Image from "next/image"
-import Navigation from "@/components/navigation"
-import ContactButton from "@/components/contact-button"
-import InteractiveBackground from "@/components/interactive-background"
+import LightNav from "@/components/light-nav"
 
 export default function PortfolioPage() {
   const projects = [
@@ -99,59 +97,40 @@ export default function PortfolioPage() {
   }
 
   return (
-    <div
-      className="min-h-screen text-white relative"
-      style={{
-        background: "hsla(213, 77%, 14%, 1)",
-        background: "linear-gradient(90deg, hsla(213, 77%, 14%, 1) 0%, hsla(202, 27%, 45%, 1) 100%)",
-      }}
-    >
-      <InteractiveBackground />
-      <Navigation />
-      <ContactButton />
+    <div className="min-h-screen bg-background text-foreground relative">
+      <LightNav />
 
       <div className="pt-24 pb-20 relative z-20">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white hover:scale-105 transition-transform duration-300 cursor-default">
-              <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                Portfolio Projects
-              </span>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
+              Portfolio Projects
             </h1>
-            <p className="text-white/70 text-lg max-w-2xl mx-auto animate-text-glow">
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
               A showcase of my creative work and successful campaigns
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-            {projects.map((project, index) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {projects.map((project) => (
               <Card
                 key={project.title}
-                className="glass-card backdrop-blur-xl bg-white/5 border border-white/10 overflow-hidden hover:bg-white/10 transition-all duration-500 group cursor-pointer magnetic-hover hover:shadow-2xl hover:shadow-blue-500/20"
+                className="overflow-hidden bg-white border border-border rounded-2xl shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-300 group cursor-pointer h-full flex flex-col"
                 onClick={() => openPortfolioLink(project.link)}
-                style={{
-                  animationDelay: `${index * 100}ms`,
-                }}
               >
-                {/* Interactive Background Gradient */}
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
-                />
-
-                <div className="relative overflow-hidden">
+                <div className="relative overflow-hidden h-40 bg-slate-50">
                   <Image
                     src={project.image || "/placeholder.svg"}
                     alt={project.title}
                     width={400}
                     height={300}
-                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-700"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
                   {/* Video Play Button */}
                   {project.isVideo && (
-                    <div className="absolute top-4 right-4 w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:scale-110 transition-transform animate-pulse-glow">
-                      <Play className="w-5 h-5 text-white ml-0.5" />
+                    <div className="absolute top-4 right-4 w-10 h-10 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <Play className="w-5 h-5 text-foreground ml-0.5" />
                     </div>
                   )}
 
@@ -159,104 +138,48 @@ export default function PortfolioPage() {
                   <div className="absolute top-4 left-4">
                     <Badge
                       variant="secondary"
-                      className="bg-blue-500/20 text-blue-300 border-blue-500/30 hover:scale-105 transition-transform"
+                      className="bg-primary/20 text-primary border-primary/30"
                     >
                       {project.category}
                     </Badge>
                   </div>
                 </div>
 
-                {/* Stats */}
-                <div className="p-6 relative z-10">
-                  <div className="flex items-center mb-2">
-                    <span className="text-2xl mr-2 group-hover:animate-bounce">{project.icon}</span>
-                    <h3 className="text-xl font-semibold text-white group-hover:text-blue-300 transition-colors">
+                {/* Content */}
+                <div className="p-6 flex-grow flex flex-col gap-4">
+                  <div className="flex items-start gap-3">
+                    <span className="text-2xl flex-shrink-0">{project.icon}</span>
+                    <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
                       {project.title}
                     </h3>
                   </div>
-                  <p className="text-white/70 mb-4 text-sm group-hover:text-white/90 transition-colors">
+                  <p className="text-muted-foreground text-sm leading-relaxed flex-grow">
                     {project.description}
                   </p>
-                  <div className="flex flex-wrap gap-2 mb-4">
+                  <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
                       <Badge
                         key={tag}
                         variant="outline"
-                        className="border-white/20 text-white/60 text-xs hover:scale-105 transition-transform"
+                        className="border-border text-muted-foreground text-xs"
                       >
                         {tag}
                       </Badge>
                     ))}
                   </div>
-
-                  {/* Action Button */}
-                  <div className="opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-4 group-hover:translate-x-0">
-                    <Button
-                      size="sm"
-                      className="bg-blue-600/80 hover:bg-blue-600 text-white border-0 backdrop-blur-sm hover:scale-110 transition-all duration-300"
-                    >
-                      <ExternalLink className="w-3 h-3 mr-1" />
-                      View Project
-                    </Button>
-                  </div>
-                </div>
-
-                {/* Hover Glow Effect */}
-                <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                  <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-blue-400/10 to-cyan-400/10 blur-xl" />
+                  <Button
+                    size="sm"
+                    className="bg-primary hover:bg-primary/90 text-primary-foreground border-0 w-full mt-2 group-hover:scale-105 transition-transform"
+                  >
+                    <ExternalLink className="w-3 h-3 mr-1" />
+                    View Project
+                  </Button>
                 </div>
               </Card>
             ))}
           </div>
         </div>
       </div>
-
-      <style jsx global>{`
-        .glass-card {
-          backdrop-filter: blur(16px);
-          -webkit-backdrop-filter: blur(16px);
-        }
-        
-        .glass-card:hover {
-          transform: translateY(-8px) scale(1.02);
-          box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-        }
-        
-        @keyframes float-geometric {
-          0%, 100% { transform: translateY(0px) rotate(0deg); }
-          50% { transform: translateY(-25px) rotate(180deg); }
-        }
-        
-        .animate-float-geometric {
-          animation: float-geometric 6s ease-in-out infinite;
-        }
-        
-        @keyframes text-glow {
-          0%, 100% { text-shadow: 0 0 10px rgba(59, 130, 246, 0.3); }
-          50% { text-shadow: 0 0 20px rgba(59, 130, 246, 0.6), 0 0 30px rgba(6, 182, 212, 0.3); }
-        }
-        
-        .animate-text-glow {
-          animation: text-glow 3s ease-in-out infinite;
-        }
-        
-        @keyframes pulse-glow {
-          0%, 100% { box-shadow: 0 0 15px rgba(59, 130, 246, 0.3); }
-          50% { box-shadow: 0 0 25px rgba(59, 130, 246, 0.6), 0 0 35px rgba(6, 182, 212, 0.3); }
-        }
-        
-        .animate-pulse-glow {
-          animation: pulse-glow 2s ease-in-out infinite;
-        }
-        
-        .magnetic-hover {
-          transition: transform 0.3s ease;
-        }
-        
-        .magnetic-hover:hover {
-          transform: translateY(-8px) scale(1.02);
-        }
-      `}</style>
     </div>
   )
 }
