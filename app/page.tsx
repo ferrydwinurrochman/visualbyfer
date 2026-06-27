@@ -193,106 +193,55 @@ export default function HomePage() {
       </section>
 
       {/* Brands & Clients Section */}
-      <section className="py-24 bg-gradient-to-r from-primary/5 to-secondary/5">
+      <section className="py-20 bg-gradient-to-r from-primary/5 to-secondary/5">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Brands I've Worked With</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Trusted by leading brands to scale their digital presence
+          <div className="text-center mb-16">
+            <p className="text-sm font-semibold tracking-widest text-muted-foreground uppercase mb-2">
+              Trusted Partners
             </p>
+            <h2 className="text-3xl md:text-4xl font-bold">Brands I've Worked With</h2>
           </div>
 
-          {/* Brands Grid */}
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 items-center justify-center">
-              {/* JNE */}
-              <div className="flex items-center justify-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 group">
-                <Image
-                  src="https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/Logo/jne.webp"
-                  alt="JNE"
-                  width={120}
-                  height={80}
-                  className="object-contain group-hover:scale-110 transition-transform duration-300"
-                />
-              </div>
-
-              {/* Amorenza */}
-              <div className="flex items-center justify-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 group">
-                <Image
-                  src="https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/Logo/amorenza.webp"
-                  alt="Amorenza"
-                  width={120}
-                  height={80}
-                  className="object-contain group-hover:scale-110 transition-transform duration-300"
-                />
-              </div>
-
-              {/* Mureeskin */}
-              <div className="flex items-center justify-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 group">
-                <Image
-                  src="https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/Logo/mureeskin.webp"
-                  alt="Mureeskin"
-                  width={120}
-                  height={80}
-                  className="object-contain group-hover:scale-110 transition-transform duration-300"
-                />
-              </div>
-
-              {/* Scentnice */}
-              <div className="flex items-center justify-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 group">
-                <Image
-                  src="https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/Logo/scentnice.webp"
-                  alt="Scentnice"
-                  width={120}
-                  height={80}
-                  className="object-contain group-hover:scale-110 transition-transform duration-300"
-                />
-              </div>
-
-              {/* Lutte */}
-              <div className="flex items-center justify-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 group">
-                <Image
-                  src="https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/Logo/lutte.webp"
-                  alt="Lutte"
-                  width={120}
-                  height={80}
-                  className="object-contain group-hover:scale-110 transition-transform duration-300"
-                />
-              </div>
-
-              {/* Glowthinc */}
-              <div className="flex items-center justify-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 group">
-                <Image
-                  src="https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/Logo/glowthinc.webp"
-                  alt="Glowthinc"
-                  width={120}
-                  height={80}
-                  className="object-contain group-hover:scale-110 transition-transform duration-300"
-                />
-              </div>
-
-              {/* Rusteline */}
-              <div className="flex items-center justify-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 group">
-                <Image
-                  src="https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/Logo/rusteline.webp"
-                  alt="Rusteline"
-                  width={120}
-                  height={80}
-                  className="object-contain group-hover:scale-110 transition-transform duration-300"
-                />
-              </div>
-
-              {/* Zealin */}
-              <div className="flex items-center justify-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 group">
-                <Image
-                  src="https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/Logo/zealin.webp"
-                  alt="Zealin"
-                  width={120}
-                  height={80}
-                  className="object-contain group-hover:scale-110 transition-transform duration-300"
-                />
-              </div>
+          {/* Brands Marquee Carousel */}
+          <div className="relative overflow-hidden">
+            {/* Marquee Container */}
+            <div className="flex gap-8 animate-marquee">
+              {[
+                { name: "JNE", url: "https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/Logo/jne.webp" },
+                { name: "Amorenza", url: "https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/Logo/amorenza.webp" },
+                { name: "Mureeskin", url: "https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/Logo/mureeskin.webp" },
+                { name: "Scentnice", url: "https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/Logo/scentnice.webp" },
+                { name: "Lutte", url: "https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/Logo/lutte.webp" },
+                { name: "Glowthinc", url: "https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/Logo/glowthinc.webp" },
+                { name: "Rusteline", url: "https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/Logo/rusteline.webp" },
+                { name: "Zealin", url: "https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/Logo/zealin.webp" },
+              ].concat([
+                { name: "JNE", url: "https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/Logo/jne.webp" },
+                { name: "Amorenza", url: "https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/Logo/amorenza.webp" },
+                { name: "Mureeskin", url: "https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/Logo/mureeskin.webp" },
+                { name: "Scentnice", url: "https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/Logo/scentnice.webp" },
+                { name: "Lutte", url: "https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/Logo/lutte.webp" },
+                { name: "Glowthinc", url: "https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/Logo/glowthinc.webp" },
+                { name: "Rusteline", url: "https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/Logo/rusteline.webp" },
+                { name: "Zealin", url: "https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/Logo/zealin.webp" },
+              ]).map((brand, idx) => (
+                <div key={idx} className="flex-shrink-0">
+                  <div className="flex items-center justify-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 group h-24 w-32">
+                    <Image
+                      src={brand.url}
+                      alt={brand.name}
+                      width={100}
+                      height={60}
+                      className="object-contain group-hover:scale-110 transition-transform duration-300"
+                    />
+                  </div>
+                </div>
+              ))}
             </div>
+
+            {/* Gradient Fade Effect */}
+            <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-background to-transparent pointer-events-none" />
+            <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-background to-transparent pointer-events-none" />
           </div>
         </div>
       </section>

@@ -1011,6 +1011,9 @@ video {
 .h-svh {
   height: 100svh;
 }
+.h-24 {
+  height: 6rem;
+}
 .max-h-28 {
   max-height: 7rem;
 }
@@ -1118,6 +1121,9 @@ video {
 }
 .w-px {
   width: 1px;
+}
+.w-32 {
+  width: 8rem;
 }
 .min-w-0 {
   min-width: 0px;
@@ -1958,6 +1964,10 @@ video {
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
+}
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 .font-bold {
   font-weight: 700;
@@ -3663,6 +3673,11 @@ html {
   .md\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
+  }
+
+  .md\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
   }
 
   .md\:opacity-0 {
