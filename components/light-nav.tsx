@@ -19,9 +19,6 @@ export default function LightNav() {
           <Link href="/portfolio" className="hover:text-primary transition-colors">
             Portfolio
           </Link>
-          <Link href="/portfolio" className="hover:text-primary transition-colors">
-            Projects
-          </Link>
           <Link href="/contact" className="hover:text-primary transition-colors">
             Contact
           </Link>
