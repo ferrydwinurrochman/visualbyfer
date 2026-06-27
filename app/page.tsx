@@ -23,52 +23,55 @@ export default function HomePage() {
   const projects = [
     {
       id: 1,
-      title: "JNE - 6 Years Career Progression",
-      description: "A 6+ year journey of consistent promotion and operational excellence. Started at the frontlines handling high-volume transactions as a Sales Counter Officer, advanced to Marketing Staff executing regional brand activations, and ultimately promoted to Sales Support Analyst to build automated Power BI and Excel dashboards for complex sales data.",
-      tags: ["Operations", "Marketing Activation", "Data Analysis", "Power BI"],
+      title: "JNE Cirebon – Data & Marketing Acceleration",
+      description: "Merancang infrastruktur pelaporan data otomatis menggunakan Power BI dan Advanced Excel. Dasbor analitik ini berhasil memfasilitasi pengambilan keputusan strategis klien korporat yang berdampak pada peningkatan omset hingga 25%. Di sisi kreatif, mengeksekusi aktivasi digital yang mencetak pertumbuhan engagement dan pengikut media sosial sebesar 10% setiap bulannya.",
+      tags: ["Power BI", "Data Analytics", "Social Media Management"],
       image: "https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/Logo/jne.webp",
     },
     {
       id: 2,
-      title: "Mureeskin Market Expansion",
-      description: "Spearheaded the 'Advanced Blemish Defense' campaign, optimizing marketplace conversion funnels exclusively for Shopee, resulting in lower CAC and higher ROAS.",
-      tags: ["Shopee", "Meta Ads", "Power BI"],
-      image: "https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/Logo/mureeskin.webp",
+      title: "Amorenza Group – 360-Degree Brand Orchestration",
+      description: "Memimpin strategi komunikasi pemasaran digital dan mengorkestrasi lintas divisi (Creative, Marketplace, Affiliate) untuk ekosistem B2B Maklon dan B2C. Mengeksekusi kampanye iklan (Meta, TikTok, Google Ads) berbasis optimasi pixel tracking yang presisi guna memaksimalkan ROAS, sembari merumuskan strategi positioning merek yang kuat untuk lini kosmetik dan parfum.",
+      tags: ["Performance Marketing", "Brand Strategy", "Team Leadership"],
+      image: "https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/Logo/amorenza.webp",
     },
     {
       id: 3,
-      title: "Lutte & Scentnice",
-      description: "Brand development and community building for 'Lutters' alongside executing a high-converting '3 for 99k' bundling promo for the Scentnice Black Series.",
-      tags: ["Brand Strategy", "Copywriting", "Web Design"],
-      image: "https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/Logo/scentnice.webp",
+      title: "FullCircle Digital – E-Commerce Growth Strategy",
+      description: "Menyediakan layanan konsultasi spesialis pemasaran dan ekspansi marketplace untuk berbagai brand lifestyle & beauty. Mengeksekusi struktur kampanye promosi, optimasi funneling konversi tingkat lanjut, dan desain visual antarmuka (UI/UX) guna mendorong visibilitas serta dominasi brand di pasar digital.",
+      tags: ["E-Commerce Strategy", "UI/UX Design", "B2C Consulting"],
+      image: "https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/Logo/amorenza.webp",
     },
     {
       id: 4,
-      title: "AdPilots Prototype",
-      description: "A SaaS prototype dashboard designed to automate ad management workflows.",
-      tags: ["React", "Node.js", "Tailwind"],
-      image: "https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/Logo/glowthinc.webp",
+      title: "Mureeskin Market Expansion",
+      description: "Spearheaded the 'Advanced Blemish Defense' campaign, optimizing marketplace conversion funnels exclusively for Shopee, resulting in lower CAC and higher ROAS.",
+      tags: ["Shopee", "Meta Ads", "Performance Marketing"],
+      image: "https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/Logo/mureeskin.webp",
     },
     {
       id: 5,
-      title: "FullCircle Digital",
-      description: "Founded a 360-degree digital marketing agency focusing on end-to-end e-commerce operational integration.",
-      tags: ["Business Development", "Management"],
-      image: "https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/Logo/amorenza.webp",
+      title: "Lutte & Scentnice",
+      description: "Brand development and community building for 'Lutters' alongside executing a high-converting '3 for 99k' bundling promo for the Scentnice Black Series.",
+      tags: ["Brand Strategy", "Copywriting", "Creative Direction"],
+      image: "https://raw.githubusercontent.com/ferrydwinurrochman/visualbyfer/main/Foto%20Porto/Logo/scentnice.webp",
     },
   ]
 
   const techStack = [
     "Microsoft Power BI",
-    "Excel",
-    "Meta Ads",
+    "Advanced Excel",
+    "META Ads",
     "Google Ads",
     "TikTok Ads",
-    "Shopee",
-    "React",
-    "Node.js",
+    "Shopee Seller Center",
+    "TikTok Shop",
+    "Lazada Affiliate",
+    "Adobe Creative Cloud",
     "Figma",
-    "Tailwind CSS",
+    "CapCut",
+    "Canva",
+    "CorelDRAW",
   ]
 
   return (
@@ -85,34 +88,34 @@ export default function HomePage() {
             {/* Left Column - Text */}
             <div className={`space-y-8 ${isVisible ? "animate-fade-in" : "opacity-0"}`}>
               <div className="space-y-3">
-                <p className="text-sm font-semibold tracking-widest text-muted-foreground uppercase">
-                  HELLO, I AM
-                </p>
                 <h1 className="text-5xl md:text-6xl font-bold leading-tight">
-                  Ferry Dwi Nurrochman<span className="text-primary">.</span>
+                  FERRY DWI NURROCHMAN<span className="text-primary">.</span>
                 </h1>
+                <p className="text-xl md:text-2xl text-muted-foreground font-semibold">
+                  S.Ikom
+                </p>
               </div>
 
               <div className="inline-block">
                 <Badge variant="secondary" className="bg-secondary/10 text-foreground border-secondary/20 text-base py-2 px-4">
-                  Independent Marketing Strategist & Data Analyst
+                  Digital Marketing Strategist | Performance Analyst | Creative Lead
                 </Badge>
               </div>
 
               <p className="text-lg text-muted-foreground leading-relaxed max-w-md">
-                Building scalable, profitable systems for B2B and consumer brands. I combine operational discipline with data analytics to automate workflows, optimize budget efficiency, and drive e-commerce growth.
+                Memadukan strategi kreatif 360-derajat, infrastruktur data tingkat lanjut, dan eksekusi kampanye yang tajam. Saya membangun sistem pemasaran yang terukur, mengoptimalkan efisiensi budget iklan, dan mendorong skalabilitas pertumbuhan omset untuk brand B2B maupun B2C.
               </p>
 
               <div className="flex gap-4 pt-4">
                 <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-base">
                   <Link href="/portfolio">
                     <Download className="w-4 h-4 mr-2" />
-                    View Full Portfolio
+                    Lihat Portofolio
                   </Link>
                 </Button>
                 <Button variant="outline" className="px-8 py-6 text-base border-primary/20 hover:bg-primary/5">
                   <Link href="/contact" className="flex items-center gap-2">
-                    Contact Me
+                    Hubungi Saya
                     <ExternalLink className="w-4 h-4" />
                   </Link>
                 </Button>
@@ -193,16 +196,19 @@ export default function HomePage() {
       <section id="about" className="py-24 bg-white/40 backdrop-blur-sm border-y border-border">
         <div className="container mx-auto px-6 max-w-3xl">
           <div className="space-y-8">
-            <h2 className="text-4xl font-bold">About Me</h2>
+            <div>
+              <h2 className="text-4xl font-bold mb-2">Strategi Berbasis Data.</h2>
+              <h2 className="text-4xl font-bold text-primary">Eksekusi Berbasis Kreativitas.</h2>
+            </div>
             <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
               <p>
-                I&apos;m Ferry Dwi Nurrochman, a Marketing Strategist and Data Analyst with a passion for building scalable systems. With a background in Communication Studies, I&apos;ve developed expertise in combining operational discipline with technical analytics.
+                Saya adalah seorang profesional di bidang Creative Marketing dan Sales dengan pengalaman lebih dari 6 tahun. Saya percaya bahwa kampanye visual yang memukau harus selalu didukung oleh analitik data yang solid.
               </p>
               <p>
-                Over the years, I&apos;ve worked with B2B and consumer brands to automate workflows, optimize marketing budgets, and drive e-commerce growth. My approach integrates brand strategy, performance marketing, and business operations to deliver measurable results.
+                Keahlian utama saya terletak pada titik temu antara operasional bisnis dan pemasaran—mulai dari memetakan brand positioning, merancang sistem pelaporan otomatis dengan Power BI, hingga memimpin tim mengeksekusi performance marketing dan konversi marketplace. Fokus saya sederhana: menjembatani kebutuhan audiens dengan metrik pertumbuhan bisnis yang nyata.
               </p>
               <p>
-                When I&apos;m not strategizing or analyzing data, I&apos;m exploring new tools, mentoring aspiring marketers, or thinking about the next big system that can scale a business.
+                Mari berkolaborasi untuk merancang sistem pemasaran yang tidak hanya estetis, namun juga memberikan dampak terukur bagi bisnis Anda.
               </p>
             </div>
           </div>
